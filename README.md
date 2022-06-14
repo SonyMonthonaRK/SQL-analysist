@@ -1,4 +1,4 @@
-#Analyzing American Baby Name Trends
+# Analyzing American Baby Name Trends
 
 How have baby name preferences in the United States changed since 1920? Which names have kept popular for more than a century, and how do they compare to the most recent top baby names? These are important considerations for many new parents, but the skills we'll learn while answering these questions are universal. After all, many businesses rely on knowing trends and popularity.
 
