@@ -52,6 +52,8 @@ GROUP BY first_name
 HAVING COUNT(first_name) = 101
 ORDER BY SUM(num) DESC ;
 
+![](Imagesquerry/1.jpg)
+
 2. Timeless or trendy
 - Classify first names as 'Classic', 'Semi-classic', 'Semi-trendy', or 'Trendy'
 - Alias this column as popularity_type
@@ -69,6 +71,8 @@ ORDER BY SUM(num) DESC ;
     GROUP BY first_name
     ORDER BY first_name ASC;
 
+![](Imagesquerry/2.jpg)
+
 3. Top-ranked female names since 1920
 -  RANK names by the sum of babies who have ever had that name (descending), aliasing as name_rank
 - Select name_rank, first_name, and the sum of babies who have ever had that name
@@ -84,6 +88,8 @@ WHERE sex = 'F'
 GROUP BY first_name
 LIMIT 10;
 
+![](Imagesquerry/3.jpg)
+
 4. Picking a baby name
 - Select only the first_name column
 - Filter for results where sex is 'F', year is greater than 2015, and first_name ends in 'a'
@@ -94,6 +100,8 @@ FROM baby_names
 WHERE sex = 'F' AND year > 2015 AND first_name LIKE '%a'
 GROUP BY first_name
 ORDER BY SUM(num) DESC
+
+![](Imagesquerry/4.jpg)
 
 5. The Olivia expansion
 - Select year, first_name, num of Olivias in that year, and cumulative_olivias
@@ -110,6 +118,8 @@ FROM baby_names
 WHERE first_name = 'Olivia'
 ORDER BY year
 
+![](Imagesquerry/5.jpg)
+
 6. Many males with the same name
 -  Select year and maximum number of babies given any one male name in that year, aliased as max_num
 - Filter the data to include only results where sex equals 'M'.
@@ -120,6 +130,9 @@ ORDER BY year
 FROM baby_names
 WHERE sex = 'M'
 GROUP BY year
+
+![](Imagesquerry/6.jpg)
+
 7. Top male names over the years
 - Select year, first_name given to the largest number of male babies, and num of babies given that name
 - Join baby_names to the code in the last task as a subquery
@@ -137,6 +150,9 @@ INNER JOIN (SELECT
                 GROUP BY year) AS sub 
 ON b.year = sub.year AND b.num = sub.max_num
 ORDER BY b.year DESC
+
+![](Imagesquerry/7.jpg)
+
 8. The most years at number one
 - Select first_name and a count of years it was the top name in the last task; alias as count_top_name
 - Use the code from the previous task as a common table expression
@@ -162,3 +178,5 @@ SELECT
 FROM top_male_names
 GROUP BY first_name
 ORDER BY count_top_name DESC;
+
+![](Imagesquerry/8.jpg)
